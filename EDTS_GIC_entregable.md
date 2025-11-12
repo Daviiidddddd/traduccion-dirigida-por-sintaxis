@@ -1,5 +1,5 @@
 
-# Entregable: EDTS para GIC (suma, resta, multiplicación, división)
+# Entregable: EDTS para GIC (suma, resta, multiplicación, división) David Andres Castellanos Angul
 
 ## 1) Gramática (GIC) - LL(1)
 **Terminales:** `int`, `float`, `id`, `num`, `=`, `+`, `-`, `*`, `/`, `(`, `)`, `,`, `;`, `$`  
@@ -42,7 +42,7 @@ F     -> '(' E ')'
 
 ---
 
-## 2) Atributos utilizados (resumen)
+## 2) Atributos utilizados (basicamente en resumen serian estos)
 - **Declaraciones:**
   - `Type.trad` : representación textual del tipo ("int"/"float")
   - `L.th` : atributo heredado que transporta el tipo para la lista de ids
@@ -57,7 +57,7 @@ F     -> '(' E ')'
 
 ---
 
-## 3) Cálculo de conjuntos: FIRST (F), FOLLOW (S), PREDICT (P)
+## 3) Cálculo de conjuntos: FIRST (F), FOLLOW (S), PREDICT (P) como lo pide
 
 ### FIRST (F)
 - FIRST(F) = { `(`, `id`, `num` }  
@@ -102,7 +102,7 @@ F     -> '(' E ')'
 
 ---
 
-## 4) Gramática de atributos (SDD) - reglas semánticas (resumen)
+## 4) Gramática de atributos (SDD) - reglas semánticas (
 
 Se muestran acciones clave (estilo SDD):
 
@@ -156,7 +156,7 @@ F -> num { t := newTemp(); F.place := t; F.code := emit(t || " = " || num.lexeme
 
 ---
 
-## 5) ETDS / Traducción a TAC (esquema y ejemplo)
+## 5) ETDS / Traducción a TAC (esquema y ejemplo) para complementar
 
 **Estrategia:** generar instrucciones de 3 direcciones con `newTemp()` para temporales y `emit(instr)` para añadir instrucciones.
 
@@ -199,7 +199,7 @@ b | type=int | scope=global | offset=1
 
 ---
 
-## 7) AST decorado (impreso para el ejemplo)
+## 7) AST  (o sea este es el impreso para el ejemplo)
 
 ```
 Program
@@ -218,16 +218,8 @@ Program
 
 ---
 
-## 8) Implementación (recursiva) - archivos incluidos
-
-Se incluye **parser_tac.py** que realiza: parseo recursivo (tokens precargados), construcción AST, decoración (tipos y folding parcial), generación de TAC y exportación de resultados.
-
-(El archivo `parser_tac.py` está guardado junto a este MD y puedes descargarlo.)
+## 8) (Entregable)
 
 ---
 
-## Archivos en este paquete
-
-- `/mnt/data/EDTS_GIC_entregable.md`  (este documento)
-- `/mnt/data/parser_tac.py`           (implementación recursiva en Python generadora de AST y TAC)
-
+## Fin
