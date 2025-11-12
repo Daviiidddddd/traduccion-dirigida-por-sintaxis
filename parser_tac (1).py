@@ -2,6 +2,8 @@
 # parser_tac.py
 # Parser + AST + Symbol table + TAC generator (recursion-only, no loops)
 # Ejecutable: python3 parser_tac.py
+# David Castellanos
+# joaquin
 from dataclasses import dataclass
 from typing import Optional, List, Tuple, Dict, Any
 
