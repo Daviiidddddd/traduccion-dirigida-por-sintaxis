@@ -1,20 +1,19 @@
-# Proyecto: EDTS para una GIC que soporta + - * /
+# Proyecto: EDTS para una GIC que soporta + - * / David Andres Castellanos Angulo
 
-Este repositorio contiene mi entrega del trabajo: implementé un EDTS (Esquema de Traducción Sintáctica) para una Gramática Independiente del Contexto (GIC) que soporta suma, resta, multiplicación y división, además de declaraciones simples de variables. Aquí explico **en primera persona** cómo lo hice, cómo usar el código y qué produce.
-
+Esté repositorio conteine la entrega del trabajo: hay un EDTS (Esquema de Traducción Sintáctica) para una Gramática Independientee del Contexto (GIC) que soporta suma, resta, multiplicación y división, además de declaraciones simples de variables. 
 ---
 
 ## Contenido del repositorio
 
 - `parser_tac.py`  
-  Implementación recursiva en Python (sin bucles explícitos) que hace: análisis sintáctico recursivo (LL(1)), construcción del AST, decoración (propagación de tipos y folding parcial de constantes), tabla de símbolos y generación de código intermedio (TAC). Ejecutable con `python3 parser_tac.py`.
+  Implementación recursiva en Python (sin bucles ademas) que hace: análisis sintáctico recursivo (LL(1)), construcción del AST, decoración (propagación de tipos y folding parcial de connstantes), tabla de símbolos y generación de código intermedio (TAC). Ejecutable con `python3 parser_tac.py`.
 
 - `EDTS_GIC_entregable.md`  
   Documento con la gramática, definición de atributos, cálculo de FIRST/FOLLOW/PREDICT, reglas semánticas (SDD), ejemplos de AST y TAC, y la explicación del ETDS.
 
 ---
 
-## Gramática que implementé
+## Gramática que se implement´o
 
 Terminales: `int`, `float`, `id`, `num`, `=`, `+`, `-`, `*`, `/`, `(`, `)`, `,`, `;`, `$`
 
@@ -73,7 +72,7 @@ En el código, las funciones `new_temp()` y `emit(...)` implementan la generaci�
 
 ## Cálculo de FIRST / FOLLOW / PREDICT
 
-En `EDTS_GIC_entregable.md` detallo los conjuntos FIRST y FOLLOW para cada no-terminal y los conjuntos PREDICT para cada producción — usé esos conjuntos para asegurar que la gramática es LL(1).
+En `EDTS_GIC_entregable.md` se detalla los conjuntos FIRST y FOLLOW para cada no-terminal y los conjuntos PREDICT para cada producción — tambien s eusaron esos conjuntos para asegurar que la gramática es LL(1).
 
 ---
 
@@ -86,7 +85,7 @@ int a, b;
 a = 3 + 4 * (2 - 1);
 ```
 
-Generé (entre otras variantes) el siguiente TAC:
+se genero tamnbien (entre otras variantes) el siguiente TAC:
 
 ```
 t1 = 2
@@ -99,15 +98,15 @@ t7 = t6 + t5
 a = t7
 ```
 
-También implementé folding de constantes donde es posible (por ejemplo `2 - 1` es evaluable en compilación).
+También se implementó folding de constantes donde es posible (por ejemplo `2 - 1` es evaluable en compilación).
 
 ---
 
 ## Cómo ejecutar el ejemplo
 
-1. Clona este repositorio en tu máquina o descarga el archivo `parser_tac.py`.
-2. Asegúrate de tener Python 3 instalado.
-3. Ejecuta:
+1. se pone este repositorio en la máquina o se descarga ya directamente is se quiere el archivo `parser_tac.py`.
+2. se intala el Python 3 
+3. se ejecuta:
 ```
 python3 parser_tac.py
 ```
@@ -116,13 +115,4 @@ El script ejecuta un ejemplo embebido (el mostrado arriba), imprime el AST decor
 
 ---
 
-## Comentarios finales (a modo personal)
-
-Yo implementé la solución usando **recursión** para todas las partes del parseo y del tratamiento de listas, cumpliendo con la restricción de no usar bucles explícitos para travesar listas o árboles en las funciones principales. El objetivo fue producir un entregable completo: gramática, atributos (SDD), FIRST/FOLLOW/PREDICT, AST decorado, tabla de símbolos y el ETDS con generación de TAC y ejemplo reproducible.
-
-Si quieres que suba este repositorio directamente a GitHub, puedo:
-- Preparar un archivo ZIP listo para subir, o
-- Crear un commit y un repo remoto si me proporcionas acceso (token/permiso), o
-- Generar un `LICENSE` y `requirements.txt` si lo deseas.
-
-Dime qué prefieres y lo preparo.
+## Fin Tarea 12 de noviembre de 2025..
